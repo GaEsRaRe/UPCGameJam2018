@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Assets/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Wall.gd" type="Script" id=2]
@@ -11,8 +11,7 @@
 [ext_resource path="res://floorSwitch.png" type="Texture" id=9]
 [ext_resource path="res://Scripts/Door.gd" type="Script" id=10]
 [ext_resource path="res://Assets/Teleport.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scripts/Spike.gd" type="Script" id=12]
-[ext_resource path="res://spikes.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Spike.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -24,7 +23,7 @@ extents = Vector2( 10, 227.945 )
 custom_solver_bias = 0.0
 extents = Vector2( 319.299, 10 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
@@ -34,7 +33,7 @@ extents = Vector2( 32, 32 )
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="Node2D" type="Node2D" index="0"]
+[node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." index="0" groups=[
 "Player",
@@ -135,9 +134,13 @@ shape = SubResource( 2 )
 
 [node name="Box" parent="." index="2" instance=ExtResource( 4 )]
 
+position = Vector2( 289, 74 )
+
 [node name="BreakFloor" parent="." index="3" instance=ExtResource( 5 )]
 
 [node name="Breakable" parent="." index="4" instance=ExtResource( 6 )]
+
+position = Vector2( 289, 258 )
 
 [node name="Camera2D" type="Camera2D" parent="." index="5"]
 
@@ -229,32 +232,10 @@ playback/speed = 1.0
 
 [node name="Teleport" parent="." index="8" instance=ExtResource( 11 )]
 
-[node name="Spike" type="Area2D" parent="." index="9"]
+position = Vector2( 557.139, 92.142 )
 
-position = Vector2( 422.161, 129.64 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-script = ExtResource( 12 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spike" index="0"]
-
-position = Vector2( 32, 32 )
-shape = SubResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Sprite" type="Sprite" parent="Spike" index="1"]
-
-texture = ExtResource( 13 )
-centered = false
-_sections_unfolded = [ "Offset" ]
+[node name="Spike" parent="." index="9" instance=ExtResource( 12 )]
 
 [connection signal="body_entered" from="Door-switch/switch" to="Door-switch" method="_on_switch_body_entered"]
-
-[connection signal="body_entered" from="Spike" to="Spike" method="_on_Area2D_body_entered"]
 
 

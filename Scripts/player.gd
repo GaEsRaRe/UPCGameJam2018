@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 enum Movement{NONE,UP,RIGHT,DOWN,LEFT}
 var speed = 0
+onready var timer = get_node("Timer")
 var is_dashing = false
 
 var direction = Movement.NONE
@@ -87,6 +88,12 @@ func _selector():
 	
 func _kill_movement():
 	direction = Movement.NONE
-	
+	timer.start()
 	pass
 
+
+
+func _on_Timer_timeout():
+	is_dashing = false
+	
+	pass # replace with function body

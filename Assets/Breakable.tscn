@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Breakable.gd" type="Script" id=1]
 [ext_resource path="res://wall2.png" type="Texture" id=2]
@@ -6,12 +6,17 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 106.606, 18.5306 )
+extents = Vector2( 95, 10 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 95 )
 
 [node name="Breakable" type="StaticBody2D"]
 
@@ -39,21 +44,40 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
-position = Vector2( -1, 1.52588e-005 )
+position = Vector2( -1.66342, 1.52588e-005 )
 shape = SubResource( 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+[node name="Body" type="CollisionShape2D" parent="." index="1"]
 
 position = Vector2( 32, 32 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Sprite" type="Sprite" parent="." index="2"]
+[node name="Vertical" type="Area2D" parent="." index="2"]
+
+position = Vector2( 32, 32 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vertical" index="0"]
+
+shape = SubResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="." index="3"]
 
 texture = ExtResource( 2 )
 centered = false
 _sections_unfolded = [ "Offset" ]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+
+[connection signal="body_entered" from="Vertical" to="." method="_on_Vertical_body_entered"]
 
 
