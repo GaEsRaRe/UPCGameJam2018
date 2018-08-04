@@ -4,11 +4,11 @@ enum Movement{NONE,UP,RIGHT,DOWN,LEFT}
 var speed = 0
 onready var timer = get_node("Timer")
 var is_dashing = false
+onready var character_sprite = get_node("AnimatedSprite")
 
 var direction = Movement.NONE
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
+	character_sprite.play("UP")
 	set_physics_process(true)
 	pass
 
@@ -17,7 +17,6 @@ func _physics_process(delta):
 		_selector()
 	else:
 		if is_dashing:
-			
 			_movement(delta)
 		else:
 			_dash_selector(delta)
@@ -34,21 +33,25 @@ func _dash_selector(delta):
 				speed *= 2
 				is_dashing = true
 				print("DASH!!")
+				
 		Movement.DOWN:
 			if Input.is_action_just_pressed("ui_down"):
 				speed *= 2
 				is_dashing = true
 				print("DASH!!")
+				
 		Movement.LEFT:
 			if Input.is_action_just_pressed("ui_left"):
 				speed *= 2
 				is_dashing = true
 				print("DASH!!")
+				
 		Movement.RIGHT:
 			if Input.is_action_just_pressed("ui_right"):
 				speed *= 2
 				is_dashing = true
 				print("DASH!!")
+				
 	pass
 func _movement(delta):
 	match direction:
@@ -66,6 +69,7 @@ func _movement(delta):
 				_kill_movement()
 		Movement.LEFT:
 			move_and_slide(globals.LEFT * speed, Vector2(0,-1))
+			
 			if is_on_wall():
 				_kill_movement()
 	
@@ -75,25 +79,28 @@ func _selector():
 	if Input.is_action_just_pressed("ui_up"):
 		direction = Movement.UP
 		speed = globals.player_speed
+		character_sprite.play("UP")
 	elif Input.is_action_just_pressed("ui_right"):
 		direction = Movement.RIGHT
 		speed = globals.player_speed
+		character_sprite.play("RIGHT")
 	elif Input.is_action_just_pressed("ui_down"):
 		direction = Movement.DOWN
 		speed = globals.player_speed
+		character_sprite.play("DOWN")
 	elif Input.is_action_just_pressed("ui_left"):
 		direction = Movement.LEFT
 		speed = globals.player_speed
+		character_sprite.play("LEFT")
 	pass
 	
 func _kill_movement():
 	direction = Movement.NONE
-	timer.start()
+	is_dashing = false
 	pass
 
 
 
 func _on_Timer_timeout():
 	is_dashing = false
-	
 	pass # replace with function body

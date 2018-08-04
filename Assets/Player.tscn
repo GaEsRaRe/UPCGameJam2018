@@ -1,12 +1,40 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://temp.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Stand/player_left.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Stand/player_front.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Stand/player_right.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Stand/player_down.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 33.1823, 31.64 )
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "LEFT",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "UP",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "RIGHT",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "DOWN",
+"speed": 5.0
+} ]
 
 [node name="Player" type="KinematicBody2D"]
 
@@ -25,6 +53,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="CollisionShape2D" index="0"]
 
+visible = false
 scale = Vector2( 0.175993, 0.175993 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Offset", "Transform" ]
@@ -32,9 +61,17 @@ _sections_unfolded = [ "Offset", "Transform" ]
 [node name="Timer" type="Timer" parent="." index="1"]
 
 process_mode = 1
-wait_time = 1.0
+wait_time = 0.5
 one_shot = false
 autostart = false
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="2"]
+
+frames = SubResource( 2 )
+animation = "UP"
+centered = false
+offset = Vector2( 0, -64 )
+_sections_unfolded = [ "Transform" ]
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 

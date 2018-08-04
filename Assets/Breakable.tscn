@@ -18,7 +18,7 @@ extents = Vector2( 32, 32 )
 custom_solver_bias = 0.0
 extents = Vector2( 10, 95 )
 
-[node name="Breakable" type="StaticBody2D"]
+[node name="Breakable" type="StaticBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -74,7 +74,7 @@ _sections_unfolded = [ "Transform" ]
 
 texture = ExtResource( 2 )
 centered = false
-_sections_unfolded = [ "Offset" ]
+_sections_unfolded = [ "Offset", "Transform" ]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 
