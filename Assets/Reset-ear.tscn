@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=11]
+
+script/source = "extends Node
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _ready():
+	set_process(true)
+	pass
+
+func _process(delta):
+	if Input.is_action_just_pressed(\"ui_restart\"):
+		get_tree().reload_current_scene()
+	pass"
+
+[node name="Reset-ear" type="Node"]
+
+script = SubResource( 11 )
+
+
