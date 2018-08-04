@@ -9,8 +9,11 @@
 [ext_resource path="res://Assets/Teleport.tscn" type="PackedScene" id=7]
 
 [node name="0-0" type="Node2D"]
+<<<<<<< Updated upstream
 
 _sections_unfolded = [ "Transform" ]
+=======
+>>>>>>> Stashed changes
 
 [node name="Reset-ear" parent="." index="0" instance=ExtResource( 1 )]
 
