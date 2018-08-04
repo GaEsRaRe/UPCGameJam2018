@@ -15,7 +15,7 @@ func _ready():
 
 func _physics_process(delta):
 	if to_move:
-		move_and_collide(globals.player_speed * direction)
+		move_and_slide(globals.player_speed * direction)
 	pass
 
 func go(dir):
@@ -38,6 +38,7 @@ func _on_Area2D_body_entered(body):
 	if body.is_in_group("Player") :
 		if body.is_dashing and (body.direction == Movement.UP or body.direction == Movement.DOWN):
 			go(body.direction)
+			
 
 	pass # replace with function body
 
@@ -46,7 +47,7 @@ func _on_Area2D_body_exited(body):
 	if body.is_in_group("Player"):
 		set_physics_process(false)
 		direction = Vector2(0,0)
-		to_move = false
+		#to_move = false
 		
 	pass # replace with function body
 

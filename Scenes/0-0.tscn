@@ -78,7 +78,7 @@ _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="Box" parent="Boxes" index="0" instance=ExtResource( 4 )]
 
-position = Vector2( -512, -448 )
+position = Vector2( -510, -320 )
 
 [node name="Breakables" type="Node" parent="." index="5"]
 
