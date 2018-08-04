@@ -11,7 +11,12 @@ config_version=3
 [application]
 
 config/name="GameJamUPC"
+run/main_scene="res://Test.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+globals="*res://Scripts/globals.gd"
 
 [rendering]
 
