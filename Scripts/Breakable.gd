@@ -4,9 +4,12 @@ enum Movement{NONE,UP,RIGHT,DOWN,LEFT}
 onready var colly = get_node("Body")
 
 func _ready():
-
+	set_physics_process(true)
 	pass
 
+func _physics_process(delta):
+	
+	pass
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Player"):
