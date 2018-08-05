@@ -7,7 +7,7 @@ extends Area2D
 onready var bzAnim = get_node("AnimationPlayer")
 
 func _ready():
-	get_node("BlackZoneSprite").modulate.a = 255
+	get_node("BlackZoneSprite").modulate = "4c4c4c"
 	pass
 
 

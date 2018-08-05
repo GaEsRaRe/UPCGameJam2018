@@ -4,7 +4,7 @@
 [ext_resource path="res://floor2.png" type="Texture" id=2]
 [ext_resource path="res://floor1.png" type="Texture" id=3]
 [ext_resource path="res://wall2.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/BlackSprite.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/SimpleSprite.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -67,7 +67,7 @@ extents = Vector2( 32, 32 )
 4/name = "BlackSprite"
 4/texture = ExtResource( 5 )
 4/tex_offset = Vector2( 0, 0 )
-4/modulate = Color( 1, 1, 1, 1 )
+4/modulate = Color( 0.298039, 0.298039, 0.298039, 1 )
 4/region = Rect2( 0, 0, 64, 64 )
 4/is_autotile = false
 4/occluder_offset = Vector2( 32, 32 )

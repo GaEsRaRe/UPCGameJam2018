@@ -1,8 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/BlackZone.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/BlackSprite.png" type="Texture" id=2]
-
+[ext_resource path="res://Sprites/SimpleSprite.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -25,7 +24,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"values": [ Color( 0.298039, 0.298039, 0.298039, 1 ), Color( 0.298039, 0.298039, 0.298039, 0 ) ]
 }
 
 [node name="BlackZone" type="Area2D"]
@@ -39,16 +38,16 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Z Index" ]
 
 [node name="BlackZoneSprite" type="Sprite" parent="." index="0"]
 
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color( 0.298039, 0.298039, 0.298039, 0 )
 position = Vector2( -832, -576 )
 scale = Vector2( 7, 7 )
 texture = ExtResource( 2 )
 offset = Vector2( 32, 32 )
-_sections_unfolded = [ "Offset", "Pause", "Transform", "Visibility" ]
+_sections_unfolded = [ "Offset", "Pause", "Transform", "Visibility", "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
