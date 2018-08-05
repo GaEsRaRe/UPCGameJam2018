@@ -27,6 +27,11 @@ func _ready():
 func _on_Button_button_down():
 	get_tree().change_scene(\"res://Scenes/Opening.tscn\")
 	pass 
+
+
+func _on_Button2_button_down():
+	get_tree().change_scene(\"res://Scenes/Creditos.tscn\")
+	pass # replace with function body
 "
 
 [node name="MainMenu" type="Node"]
@@ -175,6 +180,8 @@ max_distance = 2000.0
 attenuation = 1.0
 bus = "Master"
 area_mask = 1
+
+[connection signal="button_down" from="Control/Button2" to="." method="_on_Button2_button_down"]
 
 [connection signal="button_down" from="Control/Button" to="." method="_on_Button_button_down"]
 
