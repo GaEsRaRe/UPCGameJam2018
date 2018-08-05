@@ -34,6 +34,7 @@ func _dash_selector(delta):
 	match direction:
 		Movement.UP:
 			if Input.is_action_just_pressed("ui_up"):
+				on_tween = true
 				speed *= 2
 				is_dashing = true
 				go_dash()
@@ -41,6 +42,7 @@ func _dash_selector(delta):
 				
 		Movement.DOWN:
 			if Input.is_action_just_pressed("ui_down"):
+				on_tween = true
 				speed *= 2
 				is_dashing = true
 				go_dash()
@@ -48,6 +50,7 @@ func _dash_selector(delta):
 				
 		Movement.LEFT:
 			if Input.is_action_just_pressed("ui_left"):
+				on_tween = true
 				speed *= 2
 				is_dashing = true
 				go_dash()
@@ -55,6 +58,7 @@ func _dash_selector(delta):
 				
 		Movement.RIGHT:
 			if Input.is_action_just_pressed("ui_right"):
+				on_tween = true
 				speed *= 2
 				is_dashing = true
 				go_dash()
@@ -103,7 +107,7 @@ func _selector():
 	pass
 
 func go_dash():
-	tween.interpolate_property(self,"position",position, position + (globals.get_vector(direction) * -64),0.3,Tween.TRANS_BACK,Tween.EASE_OUT)
+	tween.interpolate_property(self,"position",position, position + (globals.get_vector(direction) * -32),0.3,Tween.TRANS_SINE,Tween.EASE_OUT)
 	if not direction == Movement.NONE:
 		old_direction = direction
 		tween.start()
