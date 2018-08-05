@@ -70,10 +70,12 @@ func _movement(delta):
 		Movement.UP:
 			move_and_slide(globals.UP * speed, Vector2(0,-1))
 			if is_on_ceiling():
+				character_sprite.play("RIGHT")
 				_kill_movement()
 		Movement.RIGHT:
 			move_and_slide(globals.RIGHT * speed, Vector2(0,-1))
 			if is_on_wall():
+				character_sprite.play("RIGHT")
 				_kill_movement()
 		Movement.DOWN:
 			move_and_slide(globals.DOWN * speed, Vector2(0,-1))
@@ -93,11 +95,11 @@ func _selector():
 	if Input.is_action_just_pressed("ui_up"):
 		direction = Movement.UP
 		speed = globals.player_speed
-		character_sprite.play("UP")
+		character_sprite.play("RUN_UP")
 	elif Input.is_action_just_pressed("ui_right"):
 		direction = Movement.RIGHT
 		speed = globals.player_speed
-		character_sprite.play("RIGHT")
+		character_sprite.play("RUN_RIGHT")
 	elif Input.is_action_just_pressed("ui_down"):
 		direction = Movement.DOWN
 		speed = globals.player_speed

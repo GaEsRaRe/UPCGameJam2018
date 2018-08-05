@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Stand/player_front.png" type="Texture" id=2]
@@ -8,13 +8,15 @@
 [ext_resource path="res://Sprites/Stand/player_down_closed.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Stand/player_left.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/Stand/player_left_closed.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/Run/running_left.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/Run/running_down.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Run/running_down.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Run/running_left.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Run/running_up.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Run/running_right.png" type="Texture" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 33.1823, 31.64 )
+extents = Vector2( 32, 32 )
 
 [sub_resource type="SpriteFrames" id=2]
 
@@ -41,14 +43,25 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
-"name": "RUN_LEFT",
+"name": "RUN_DOWN",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 10 ) ],
 "loop": true,
-"name": "RUN_DOWN",
+"name": "RUN_LEFT",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "RUN_UP",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "RUN_RIGHT",
 "speed": 5.0
 } ]
+_sections_unfolded = [ "Resource" ]
 
 [node name="Player" type="KinematicBody2D"]
 
