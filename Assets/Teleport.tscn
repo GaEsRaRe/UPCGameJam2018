@@ -3,14 +3,13 @@
 [ext_resource path="res://Scripts/Teleport.gd" type="Script" id=1]
 [ext_resource path="res://TP.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
 [node name="Teleport" type="Area2D"]
 
-editor/display_folded = true
 position = Vector2( 757.139, 225.142 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -26,7 +25,7 @@ map_code_sub_level = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
 position = Vector2( 32, 32 )
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="." index="1"]

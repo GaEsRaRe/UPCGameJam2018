@@ -68,7 +68,7 @@ autostart = false
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="2"]
 
 frames = SubResource( 2 )
-animation = "UP"
+animation = "DOWN"
 centered = false
 offset = Vector2( 0, -64 )
 _sections_unfolded = [ "Transform" ]

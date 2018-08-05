@@ -172,13 +172,12 @@ editor_draw_drag_margin = false
 
 [node name="Door-switch" type="Node2D" parent="." index="7"]
 
-editor/display_folded = true
 position = Vector2( 499.258, 145.56 )
 script = ExtResource( 8 )
 
 [node name="switch" type="Area2D" parent="Door-switch" index="0"]
 
-position = Vector2( -151.002, 65.2981 )
+position = Vector2( -146.811, 112 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -207,7 +206,7 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 10 )
-direction = Vector2( 0, 0 )
+direction = Vector2( 1, 0 )
 state = false
 distance = 100
 
