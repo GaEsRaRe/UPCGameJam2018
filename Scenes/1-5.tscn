@@ -84,7 +84,7 @@ _sections_unfolded = [ "Transform", "Z Index", "collision" ]
 editor/display_folded = false
 position = Vector2( -832, -128 )
 map_code_level = 1
-map_code_sub_level = 4
+map_code_sub_level = 7
 
 [node name="Breakable4" parent="." index="6" instance=ExtResource( 2 )]
 

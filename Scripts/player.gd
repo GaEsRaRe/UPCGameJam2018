@@ -107,7 +107,7 @@ func _selector():
 	pass
 
 func go_dash():
-	tween.interpolate_property(self,"position",position, position + (globals.get_vector(direction) * -32),0.3,Tween.TRANS_SINE,Tween.EASE_OUT)
+	tween.interpolate_property(self,"position",position, position + (globals.get_vector(direction) * -32),0.05,Tween.TRANS_LINEAR,Tween.EASE_OUT)
 	if not direction == Movement.NONE:
 		old_direction = direction
 		tween.start()
