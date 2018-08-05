@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/DoorWithKey.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/SimpleSprite.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 39, 10 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="DoorWithKey" type="StaticBody2D"]
+
+position = Vector2( -1088, 256 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="DoorArea" type="Area2D" parent="." index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+keyName = "key1"
+
+[node name="AreaCollisionShape2D" type="CollisionShape2D" parent="DoorArea" index="0"]
+
+position = Vector2( 32, 32 )
+scale = Vector2( 2.46154, 2.46154 )
+shape = SubResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+
+modulate = Color( 0.898438, 0, 1, 1 )
+texture = ExtResource( 2 )
+centered = false
+_sections_unfolded = [ "Offset", "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+
+position = Vector2( 32, 32 )
+scale = Vector2( 2.46154, 2.46154 )
+shape = SubResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[connection signal="body_entered" from="DoorArea" to="DoorArea" method="_on_Door_body_entered"]
+
+
