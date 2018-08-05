@@ -8,7 +8,7 @@
 [ext_resource path="res://Assets/BlackZone.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Screen.tscn" type="PackedScene" id=7]
 
-[node name="0-0" type="Node2D" index="0"]
+[node name="0-0" type="Node2D"]
 
 [node name="Reset-ear" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -88,7 +88,6 @@ map_code_level = 1
 
 [node name="BlackZone" parent="." index="7" instance=ExtResource( 6 )]
 
-editor/display_folded = true
 position = Vector2( 1024, -384 )
 
 [node name="BlackZoneSprite" parent="BlackZone" index="0"]
