@@ -2,7 +2,7 @@
 
 [ext_resource path="res://key.png" type="Texture" id=1]
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=1]
 
 script/source = "extends Area2D
 
@@ -28,12 +28,12 @@ func _on_Key_body_entered(body):
 	pass # replace with function body
 "
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="Key" type="Area2D"]
+[node name="Key" type="Area2D" index="0"]
 
 position = Vector2( -1344, 128 )
 input_pickable = true
@@ -43,13 +43,13 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = SubResource( 2 )
+script = SubResource( 1 )
 key_name = "key1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
 position = Vector2( 32, 32 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="." index="1"]

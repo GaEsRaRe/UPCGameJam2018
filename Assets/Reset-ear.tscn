@@ -17,7 +17,7 @@ func _process(delta):
 		get_tree().reload_current_scene()
 	pass"
 
-[node name="Reset-ear" type="Node"]
+[node name="Reset-ear" type="Node" index="0"]
 
 script = SubResource( 1 )
 

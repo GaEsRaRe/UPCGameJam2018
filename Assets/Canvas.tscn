@@ -1,0 +1,135 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Canvas.gd" type="Script" id=1]
+[ext_resource path="res://TempBackground.png" type="Texture" id=2]
+
+[node name="Canvas" type="VBoxContainer"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -1472.0
+margin_top = -256.0
+margin_right = -1372.0
+margin_bottom = 52.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+script = ExtResource( 1 )
+
+[node name="Slot1" type="TextureRect" parent="." index="0"]
+
+editor/display_folded = true
+modulate = Color( 0.425781, 0.425781, 0.425781, 0.486196 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 100.0
+margin_bottom = 100.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+stretch_mode = 0
+_sections_unfolded = [ "Grow Direction", "Margin", "Rect" ]
+
+[node name="Key" type="TextureRect" parent="Slot1" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+stretch_mode = 0
+
+[node name="Slot2" type="TextureRect" parent="." index="1"]
+
+editor/display_folded = true
+modulate = Color( 0.425781, 0.425781, 0.425781, 0.486196 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 104.0
+margin_right = 100.0
+margin_bottom = 204.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+stretch_mode = 0
+_sections_unfolded = [ "Grow Direction", "Margin", "Rect" ]
+
+[node name="Key" type="TextureRect" parent="Slot2" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+stretch_mode = 0
+
+[node name="Slot3" type="TextureRect" parent="." index="2"]
+
+editor/display_folded = true
+modulate = Color( 0.425781, 0.425781, 0.425781, 0.486196 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 208.0
+margin_right = 100.0
+margin_bottom = 308.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+stretch_mode = 0
+_sections_unfolded = [ "Grow Direction", "Margin", "Rect" ]
+
+[node name="Key" type="TextureRect" parent="Slot3" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+stretch_mode = 0
+
+
