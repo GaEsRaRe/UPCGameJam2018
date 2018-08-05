@@ -99,7 +99,6 @@ _sections_unfolded = [ "Limit", "Transform" ]
 
 position = Vector2( -1088, -192 )
 scale = Vector2( 0.9, 0.9 )
-_sections_unfolded = [ "Transform", "Z Index", "collision" ]
 
 [node name="Teleport" parent="." index="4" instance=ExtResource( 4 )]
 
@@ -136,6 +135,12 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="DoorWithKey" parent="." index="7" instance=ExtResource( 7 )]
 
+[node name="AreaCollisionShape2D" parent="DoorWithKey/DoorArea" index="0"]
+
+position = Vector2( 32, 32 )
+scale = Vector2( 2.28572, 2.46154 )
+
 [connection signal="body_entered" from="Key" to="Key" method="_on_Key_body_entered"]
 
 
+[editable path="DoorWithKey"]
