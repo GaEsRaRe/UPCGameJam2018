@@ -16,7 +16,7 @@ func _ready():
 
 func _process(delta):
 	if go:
-		get_tree().change_scene(\"res://Scenes/1-1.tscn\")
+		get_tree().change_scene(\"res://Scenes/0.tscn\")
 	
 	pass"
 
@@ -96,7 +96,7 @@ tracks/4/keys = {
 "values": [ false, false, true ]
 }
 
-[node name="Node2D" type="Node2D" index="0"]
+[node name="Node2D" type="Node2D"]
 
 script = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
