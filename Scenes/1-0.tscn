@@ -13,7 +13,7 @@
 [ext_resource path="res://Assets/Screen.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/Music.tscn" type="PackedScene" id=12]
 
-[node name="0-0" type="Node2D" index="0"]
+[node name="0-0" type="Node2D"]
 
 [node name="Reset-ear" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -122,6 +122,15 @@ position = Vector2( 1024, -384 )
 position = Vector2( -896, -448 )
 scale = Vector2( 7, 10 )
 
+[node name="BlackZone" parent="BlackZone" index="3" instance=ExtResource( 9 )]
+
+position = Vector2( -1088, 320 )
+
+[node name="BlackZoneSprite" parent="BlackZone/BlackZone" index="0"]
+
+position = Vector2( -1152, -576 )
+scale = Vector2( 5, 10 )
+
 [node name="Canvas" parent="." index="10" instance=ExtResource( 10 )]
 
 margin_left = -1408.0
@@ -142,3 +151,4 @@ margin_bottom = 125.0
 [editable path="DoorWithKey"]
 [editable path="Key"]
 [editable path="BlackZone"]
+[editable path="BlackZone/BlackZone"]
