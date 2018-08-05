@@ -7,7 +7,7 @@
 [ext_resource path="res://Assets/Breakable.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Spike.tscn" type="PackedScene" id=6]
 
-[node name="0-0" type="Node2D"]
+[node name="0-0" type="Node2D" index="0"]
 
 [node name="Reset-ear" parent="." index="0" instance=ExtResource( 1 )]
 
