@@ -1,15 +1,16 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Reset-ear.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Teleport.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Spike.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Tilemaps/tiles1.tres" type="TileSet" id=4]
 [ext_resource path="res://Assets/Breakable.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/Player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/Screen.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Assets/Box.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/CameraShake.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Screen.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Box.tscn" type="PackedScene" id=9]
 
-[node name="0-0" type="Node2D"]
+[node name="0-0" type="Node2D" index="0"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -88,11 +89,12 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
+script = ExtResource( 6 )
 _sections_unfolded = [ "Limit", "Transform" ]
 
 [node name="Player" parent="." index="6" groups=[
 "Player",
-] instance=ExtResource( 6 )]
+] instance=ExtResource( 7 )]
 
 position = Vector2( 320, 384 )
 scale = Vector2( 0.9, 0.9 )
@@ -127,7 +129,7 @@ position = Vector2( -889.565, 260.29 )
 scale = Vector2( 0.8, 0.8 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Screen" parent="." index="14" instance=ExtResource( 7 )]
+[node name="Screen" parent="." index="14" instance=ExtResource( 8 )]
 
 margin_left = -1464.0
 margin_top = -283.0
@@ -136,28 +138,28 @@ margin_bottom = 802.0
 
 [node name="boxes" type="Node" parent="." index="15"]
 
-[node name="Box4" parent="boxes" index="0" instance=ExtResource( 8 )]
+[node name="Box4" parent="boxes" index="0" instance=ExtResource( 9 )]
 
 position = Vector2( -960, 0 )
 
-[node name="Box3" parent="boxes" index="1" instance=ExtResource( 8 )]
+[node name="Box3" parent="boxes" index="1" instance=ExtResource( 9 )]
 
 position = Vector2( -960, 64 )
 
-[node name="Box2" parent="boxes" index="2" instance=ExtResource( 8 )]
+[node name="Box2" parent="boxes" index="2" instance=ExtResource( 9 )]
 
 position = Vector2( -960, 128 )
 
-[node name="Box" parent="boxes" index="3" instance=ExtResource( 8 )]
+[node name="Box" parent="boxes" index="3" instance=ExtResource( 9 )]
 
 position = Vector2( -960, 320 )
 
-[node name="Box5" parent="boxes" index="4" instance=ExtResource( 8 )]
+[node name="Box5" parent="boxes" index="4" instance=ExtResource( 9 )]
 
 position = Vector2( -960, 448 )
 _sections_unfolded = [ "Transform", "collision" ]
 
-[node name="Box6" parent="boxes" index="5" instance=ExtResource( 8 )]
+[node name="Box6" parent="boxes" index="5" instance=ExtResource( 9 )]
 
 position = Vector2( 64, 128 )
 

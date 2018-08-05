@@ -1,13 +1,14 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Reset-ear.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Tilemaps/tiles1.tres" type="TileSet" id=2]
-[ext_resource path="res://Assets/Teleport.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Breakable.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Spike.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/BlackZone.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/Player.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Assets/Screen.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/CameraShake.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Teleport.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Breakable.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Spike.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/BlackZone.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Screen.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Animation" id=1]
 
@@ -79,71 +80,72 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
+script = ExtResource( 3 )
 _sections_unfolded = [ "Limit", "Transform" ]
 
-[node name="Teleport" parent="." index="3" instance=ExtResource( 3 )]
+[node name="Teleport" parent="." index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 256, -896 )
 map_code_level = 1
 map_code_sub_level = 3
 
-[node name="Breakable" parent="." index="4" instance=ExtResource( 4 )]
+[node name="Breakable" parent="." index="4" instance=ExtResource( 5 )]
 
 position = Vector2( -128, -448 )
 
-[node name="Breakable2" parent="." index="5" instance=ExtResource( 4 )]
+[node name="Breakable2" parent="." index="5" instance=ExtResource( 5 )]
 
 position = Vector2( -128, -512 )
 
-[node name="Breakable3" parent="." index="6" instance=ExtResource( 4 )]
+[node name="Breakable3" parent="." index="6" instance=ExtResource( 5 )]
 
 position = Vector2( -128, -576 )
 
-[node name="Breakable4" parent="." index="7" instance=ExtResource( 4 )]
+[node name="Breakable4" parent="." index="7" instance=ExtResource( 5 )]
 
 position = Vector2( -128, -640 )
 
-[node name="Breakable5" parent="." index="8" instance=ExtResource( 4 )]
+[node name="Breakable5" parent="." index="8" instance=ExtResource( 5 )]
 
 position = Vector2( -128, -704 )
 
-[node name="Breakable6" parent="." index="9" instance=ExtResource( 4 )]
+[node name="Breakable6" parent="." index="9" instance=ExtResource( 5 )]
 
 position = Vector2( -128, -768 )
 
-[node name="Breakable7" parent="." index="10" instance=ExtResource( 4 )]
+[node name="Breakable7" parent="." index="10" instance=ExtResource( 5 )]
 
 position = Vector2( -128, -832 )
 
-[node name="Breakable8" parent="." index="11" instance=ExtResource( 4 )]
+[node name="Breakable8" parent="." index="11" instance=ExtResource( 5 )]
 
 position = Vector2( -128, -896 )
 
-[node name="Spike" parent="." index="12" instance=ExtResource( 5 )]
+[node name="Spike" parent="." index="12" instance=ExtResource( 6 )]
 
 position = Vector2( 0, -832 )
 
-[node name="Spike2" parent="." index="13" instance=ExtResource( 5 )]
+[node name="Spike2" parent="." index="13" instance=ExtResource( 6 )]
 
 position = Vector2( 0, -704 )
 
-[node name="Spike3" parent="." index="14" instance=ExtResource( 5 )]
+[node name="Spike3" parent="." index="14" instance=ExtResource( 6 )]
 
 position = Vector2( 0, -640 )
 
-[node name="Spike4" parent="." index="15" instance=ExtResource( 5 )]
+[node name="Spike4" parent="." index="15" instance=ExtResource( 6 )]
 
 position = Vector2( 0, -576 )
 
-[node name="Spike5" parent="." index="16" instance=ExtResource( 5 )]
+[node name="Spike5" parent="." index="16" instance=ExtResource( 6 )]
 
 position = Vector2( 0, -512 )
 
-[node name="Spike6" parent="." index="17" instance=ExtResource( 5 )]
+[node name="Spike6" parent="." index="17" instance=ExtResource( 6 )]
 
 position = Vector2( 0, -448 )
 
-[node name="BlackZone" parent="." index="18" instance=ExtResource( 6 )]
+[node name="BlackZone" parent="." index="18" instance=ExtResource( 7 )]
 
 position = Vector2( 384, -320 )
 
@@ -152,7 +154,7 @@ position = Vector2( 384, -320 )
 position = Vector2( -832, -640 )
 scale = Vector2( 12, 10 )
 
-[node name="BlackZone2" parent="." index="19" instance=ExtResource( 6 )]
+[node name="BlackZone2" parent="." index="19" instance=ExtResource( 7 )]
 
 position = Vector2( 384, -128 )
 
@@ -167,13 +169,13 @@ anims/fadeInBlackZone = SubResource( 1 )
 
 [node name="Player" parent="." index="20" groups=[
 "Player",
-] instance=ExtResource( 7 )]
+] instance=ExtResource( 8 )]
 
 position = Vector2( -1088, -512 )
 scale = Vector2( 0.9, 0.9 )
 z_index = 1
 
-[node name="Screen" parent="." index="21" instance=ExtResource( 8 )]
+[node name="Screen" parent="." index="21" instance=ExtResource( 9 )]
 
 margin_left = -1136.08
 margin_top = -964.467
