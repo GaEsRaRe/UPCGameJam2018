@@ -3,7 +3,6 @@
 [ext_resource path="res://Assets/BlackZone.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/BlackSprite.png" type="Texture" id=2]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -44,7 +43,7 @@ _sections_unfolded = [ "Collision" ]
 [node name="BlackZoneSprite" type="Sprite" parent="." index="0"]
 
 modulate = Color( 1, 1, 1, 0 )
-position = Vector2( -896, -512 )
+position = Vector2( -832, -576 )
 scale = Vector2( 7, 7 )
 texture = ExtResource( 2 )
 offset = Vector2( 32, 32 )
