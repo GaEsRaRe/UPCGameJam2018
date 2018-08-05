@@ -2,10 +2,10 @@
 
 [ext_resource path="res://Scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://temp.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/Stand/player_left.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/Stand/player_front.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Stand/player_right.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/Stand/player_down.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Stand/player_front.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Stand/player_right.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Stand/player_down.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Stand/player_left.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -17,22 +17,22 @@ extents = Vector2( 33.1823, 31.64 )
 animations = [ {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "LEFT",
+"name": "UP",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "UP",
+"name": "RIGHT",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
-"name": "RIGHT",
+"name": "DOWN",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
-"name": "DOWN",
+"name": "LEFT",
 "speed": 5.0
 } ]
 
@@ -73,6 +73,17 @@ centered = false
 offset = Vector2( 0, -64 )
 _sections_unfolded = [ "Transform" ]
 
+[node name="Tween" type="Tween" parent="." index="3"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
 
 

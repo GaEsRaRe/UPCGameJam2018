@@ -36,7 +36,9 @@ func go(dir):
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Player") :
+		#print("Collision engaged", body.is_dashing)
 		if body.is_dashing and (body.direction == Movement.UP or body.direction == Movement.DOWN):
+			
 			go(body.direction)
 			
 
@@ -44,16 +46,14 @@ func _on_Area2D_body_entered(body):
 
 
 func _on_Area2D_body_exited(body):
-	if body.is_in_group("Player"):
-		set_physics_process(false)
-		direction = Vector2(0,0)
-		#to_move = false
+	#
 		
 	pass # replace with function body
 
 
 func _on_Horizontal_body_entered(body):
 	if body.is_in_group("Player"):
+		print("Collision engaged", body.is_dashing)
 		if body.is_dashing and (body.direction == Movement.LEFT or body.direction == Movement.RIGHT):
 			go(body.direction)
 		
