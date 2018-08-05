@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Tilemaps/tiles1.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/BreakFloor.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Assets/Player.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/Screen.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Assets/Box.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/SpikeByTime.tscn" type="PackedScene" id=15]
 
 [sub_resource type="Shader" id=1]
 
@@ -180,20 +181,9 @@ margin_bottom = 838.0
 
 position = Vector2( 518.809, -29.2212 )
 
-[node name="SpikeByTime" type="Area2D" parent="." index="11"]
-
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeByTime" index="0"]
-
-[node name="Sprite" type="Sprite" parent="SpikeByTime" index="1"]
+[node name="SpikeByTime" parent="." index="11" instance=ExtResource( 15 )]
 
 [connection signal="body_entered" from="Door-switch/switch" to="Door-switch" method="_on_switch_body_entered"]
 
 
+[editable path="Spike"]
