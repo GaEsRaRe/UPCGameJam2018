@@ -147,23 +147,23 @@ position = Vector2( 0.769409, 66.3611 )
 [node name="BlackZoneSprite" parent="BlackZone" index="0"]
 
 position = Vector2( -832, -513.802 )
-scale = Vector2( 4.88648, 9.90043 )
+scale = Vector2( 5.20782, 9.90043 )
 
-[node name="Screen" parent="." index="21" instance=ExtResource( 9 )]
-
-margin_left = -1719.0
-margin_top = -403.0
-margin_right = 178.0
-margin_bottom = 682.0
-
-[node name="BlackZone2" parent="." index="22" instance=ExtResource( 8 )]
+[node name="BlackZone2" parent="." index="21" instance=ExtResource( 8 )]
 
 position = Vector2( 259.803, 384.284 )
 
 [node name="BlackZoneSprite" parent="BlackZone2" index="0"]
 
-position = Vector2( -1982.33, 315.699 )
-scale = Vector2( 18.9599, -6.9328 )
+position = Vector2( -1990.7, 328.132 )
+scale = Vector2( 19.1779, -7.12706 )
+
+[node name="Screen" parent="." index="22" instance=ExtResource( 9 )]
+
+margin_left = -1719.0
+margin_top = -403.0
+margin_right = 178.0
+margin_bottom = 682.0
 
 
 [editable path="BlackZone"]
