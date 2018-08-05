@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Stand/player_front.png" type="Texture" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Sprites/Stand/player_down_closed.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Stand/player_left.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/Stand/player_left_closed.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Run/running_left.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Run/running_down.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -36,9 +38,19 @@ animations = [ {
 "loop": true,
 "name": "LEFT",
 "speed": 2.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "RUN_LEFT",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "RUN_DOWN",
+"speed": 5.0
 } ]
 
-[node name="Player" type="KinematicBody2D" index="0"]
+[node name="Player" type="KinematicBody2D"]
 
 z_index = 2
 input_pickable = false
