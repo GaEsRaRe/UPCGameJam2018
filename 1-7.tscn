@@ -82,14 +82,12 @@ scale = Vector2( 0.9, 0.9 )
 [node name="Teleport" parent="." index="4" instance=ExtResource( 5 )]
 
 position = Vector2( -1536, 320 )
-map_code_level = 1
-map_code_sub_level = 9
+map_code_level = 2
 
 [node name="Teleport2" parent="." index="5" instance=ExtResource( 5 )]
 
 position = Vector2( -1536, 256 )
-map_code_level = 1
-map_code_sub_level = 9
+map_code_level = 2
 
 [node name="SpikeByTime" parent="." index="6" instance=ExtResource( 6 )]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Reset-ear.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Teleport.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Assets/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Screen.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Box.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Music.tscn" type="PackedScene" id=10]
 
 [node name="0-0" type="Node2D" index="0"]
 
@@ -19,8 +20,8 @@ _sections_unfolded = [ "Transform" ]
 [node name="Teleport" parent="." index="1" instance=ExtResource( 2 )]
 
 position = Vector2( -512, -64 )
-map_code_level = 2
-map_code_sub_level = 3
+map_code_level = 9
+map_code_sub_level = 9
 
 [node name="Spike2" parent="." index="2" instance=ExtResource( 3 )]
 
@@ -125,8 +126,8 @@ position = Vector2( -1152, 0 )
 
 [node name="Spike6" parent="." index="13" instance=ExtResource( 3 )]
 
-position = Vector2( -889.565, 260.29 )
-scale = Vector2( 0.8, 0.8 )
+position = Vector2( -885.654, 266.383 )
+scale = Vector2( 0.677783, 0.609591 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Screen" parent="." index="14" instance=ExtResource( 8 )]
@@ -162,5 +163,9 @@ _sections_unfolded = [ "Transform", "collision" ]
 [node name="Box6" parent="boxes" index="5" instance=ExtResource( 9 )]
 
 position = Vector2( 64, 128 )
+
+[node name="AudioStreamPlayer2D" parent="." index="16" instance=ExtResource( 10 )]
+
+position = Vector2( -866.343, 110 )
 
 

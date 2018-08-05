@@ -13,7 +13,7 @@
 [ext_resource path="res://Assets/Screen.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/Music.tscn" type="PackedScene" id=12]
 
-[node name="0-0" type="Node2D" index="0"]
+[node name="0-0" type="Node2D"]
 
 [node name="Reset-ear" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -106,7 +106,8 @@ map_code_sub_level = 1
 [node name="Teleport2" parent="." index="7" instance=ExtResource( 8 )]
 
 position = Vector2( -704, -896 )
-map_code_level = 1
+map_code_level = 2
+map_code_sub_level = 1
 
 [node name="Teleport3" parent="." index="8" instance=ExtResource( 8 )]
 
@@ -122,15 +123,6 @@ position = Vector2( 1024, -384 )
 position = Vector2( -896, -448 )
 scale = Vector2( 7, 10 )
 
-[node name="BlackZone" parent="BlackZone" index="3" instance=ExtResource( 9 )]
-
-position = Vector2( -1088, 320 )
-
-[node name="BlackZoneSprite" parent="BlackZone/BlackZone" index="0"]
-
-position = Vector2( -1152, -576 )
-scale = Vector2( 4.15625, 10 )
-
 [node name="Canvas" parent="." index="10" instance=ExtResource( 10 )]
 
 margin_left = -1408.0
@@ -140,16 +132,10 @@ margin_bottom = -332.0
 
 [node name="Screen" parent="." index="11" instance=ExtResource( 11 )]
 
-margin_left = -1400.0
-margin_top = -920.0
-margin_right = 540.0
-margin_bottom = 165.0
-
-[node name="CRTFrame" parent="Screen" index="0"]
-
-margin_left = -20.0
-margin_top = -20.0
-margin_right = 1920.0
+margin_left = -1408.0
+margin_top = -960.0
+margin_right = 489.0
+margin_bottom = 125.0
 
 [node name="AudioStreamPlayer2D" parent="." index="12" instance=ExtResource( 12 )]
 
@@ -157,5 +143,3 @@ margin_right = 1920.0
 [editable path="DoorWithKey"]
 [editable path="Key"]
 [editable path="BlackZone"]
-[editable path="BlackZone/BlackZone"]
-[editable path="Screen"]
