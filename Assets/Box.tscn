@@ -28,7 +28,7 @@ extents = Vector2( 45, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 45, 10 )
 
-[node name="Box" type="KinematicBody2D"]
+[node name="Box" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -51,7 +51,6 @@ _sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="Vertical2" type="Area2D" parent="." index="2"]
 
-editor/display_folded = true
 position = Vector2( 32, 32 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )

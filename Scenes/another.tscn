@@ -1,0 +1,185 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Tilemaps/tiles1.tres" type="TileSet" id=1]
+[ext_resource path="res://Assets/BreakFloor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Breakable.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/CameraShake.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Reset-ear.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/Door-switch.gd" type="Script" id=6]
+[ext_resource path="res://floorSwitch.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/Door.gd" type="Script" id=8]
+[ext_resource path="res://TempWall.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Teleport.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Spike.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Player.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Assets/Screen.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Assets/Box.tscn" type="PackedScene" id=14]
+
+[sub_resource type="Shader" id=1]
+
+code = "shader_type canvas_item;
+
+void fragment(){
+	COLOR = vec4(1.0,0.0,0.0,1.0);
+	}"
+
+[sub_resource type="ShaderMaterial" id=2]
+
+render_priority = 0
+shader = SubResource( 1 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 32 )
+
+[node name="Node2D" type="Node2D"]
+
+material = SubResource( 2 )
+use_parent_material = true
+_sections_unfolded = [ "Material" ]
+
+[node name="TileMap" type="TileMap" parent="." index="0"]
+
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -131073, 2, 0, -196608, 2, 0, -196607, 2, 0, -196606, 2, 0, -196605, 2, 0, -196604, 2, 0, -196603, 2, 0, -196602, 2, 0, -196601, 2, 0, -196600, 2, 0, -196599, 2, 0, -196598, 2, 0, -196597, 2, 0, -196596, 2, 0, -196595, 2, 0, -65537, 2, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -131067, 0, 0, -131066, 0, 0, -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -131062, 0, 0, -131061, 0, 0, -131060, 0, 0, -131059, 2, 0, -2, 2, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 2, 0, 65534, 2, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 2, 0, 131070, 2, 0, 131071, 2, 0, 65536, 2, 0, 65537, 2, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 65549, 2, 0, 131073, 2, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131085, 2, 0, 196609, 2, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 2, 0, 262145, 2, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 2, 0, 327681, 2, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 2, 0, 393217, 2, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 2, 0, 458753, 2, 0, 458754, 2, 0, 458755, 2, 0, 458756, 2, 0, 458757, 2, 0, 458758, 2, 0, 458759, 2, 0, 458760, 2, 0, 458761, 2, 0, 458762, 2, 0, 458763, 2, 0, 458764, 2, 0, 458765, 2, 0 )
+_sections_unfolded = [ "Cell" ]
+
+[node name="BreakFloor" parent="." index="1" instance=ExtResource( 2 )]
+
+[node name="Breakable" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 289, 258 )
+
+[node name="Camera2D" type="Camera2D" parent="." index="3"]
+
+position = Vector2( 516.702, 291.924 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+script = ExtResource( 4 )
+_sections_unfolded = [ "Material" ]
+
+[node name="Reset-ear" parent="." index="4" instance=ExtResource( 5 )]
+
+[node name="Door-switch" type="Node2D" parent="." index="5"]
+
+editor/display_folded = true
+position = Vector2( 499.258, 145.56 )
+script = ExtResource( 6 )
+
+[node name="switch" type="Area2D" parent="Door-switch" index="0"]
+
+position = Vector2( 475.72, -31.1973 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="Sprite" type="Sprite" parent="Door-switch/switch" index="0"]
+
+texture = ExtResource( 7 )
+centered = false
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="Door" type="KinematicBody2D" parent="Door-switch" index="1"]
+
+position = Vector2( 258.472, 40.8113 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 8 )
+direction = Vector2( 1, 0 )
+state = false
+distance = 100
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door-switch/Door" index="0"]
+
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Door-switch/Door" index="1"]
+
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 9 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Tween" type="Tween" parent="Door-switch/Door" index="2"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[node name="Teleport" parent="." index="6" instance=ExtResource( 10 )]
+
+position = Vector2( 695.897, 62.2138 )
+map_code_level = 1
+map_code_sub_level = 1
+
+[node name="Spike" parent="." index="7" instance=ExtResource( 11 )]
+
+[node name="Player" parent="." index="8" groups=[
+"Player",
+] instance=ExtResource( 12 )]
+
+use_parent_material = true
+position = Vector2( 525.738, 252.534 )
+z_index = 0
+_sections_unfolded = [ "Material", "Transform", "Z Index", "collision" ]
+
+[node name="Screen" parent="." index="9" instance=ExtResource( 13 )]
+
+margin_left = -446.0
+margin_top = -247.0
+margin_right = 1451.0
+margin_bottom = 838.0
+
+[node name="Boxes" type="Node2D" parent="." index="10"]
+
+[node name="Box" parent="Boxes" index="0" instance=ExtResource( 14 )]
+
+position = Vector2( 518.809, -29.2212 )
+
+[connection signal="body_entered" from="Door-switch/switch" to="Door-switch" method="_on_switch_body_entered"]
+
+

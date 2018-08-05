@@ -7,6 +7,7 @@ const DOWN = Vector2(0,1)
 
 var player_speed = 700
 
+
 var keys = {
 	"key1" : false,
 	"key2" : false

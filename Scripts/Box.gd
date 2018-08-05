@@ -5,7 +5,7 @@ extends KinematicBody2D
 # var b = "textvar"
 var to_move = false
 var direction = Vector2(0,0)
-
+onready var camera = get_parent().get_parent().get_node("Camera2D")
 enum Movement{NONE,UP,RIGHT,DOWN,LEFT}
 
 func _ready():
@@ -38,10 +38,8 @@ func _on_Area2D_body_entered(body):
 	if body.is_in_group("Player") :
 		#print("Collision engaged", body.is_dashing)
 		if body.is_dashing and (body.direction == Movement.UP):
-			
+			camera.shake(0.2,15,16)
 			go(body.direction)
-			
-
 	pass # replace with function body
 
 
@@ -55,8 +53,8 @@ func _on_Horizontal_body_entered(body):
 	if body.is_in_group("Player"):
 		print("Collision engaged", body.is_dashing)
 		if body.is_dashing and body.direction == Movement.LEFT:
+			camera.shake(0.2,15,16)
 			go(body.direction)
-		
 	pass # replace with function body
 
 
@@ -64,6 +62,7 @@ func _on_Horizontal2_body_entered(body):
 	if body.is_in_group("Player"):
 		print("Collision engaged", body.is_dashing)
 		if body.is_dashing and body.direction == Movement.RIGHT:
+			camera.shake(0.2,15,16)
 			go(body.direction)
 	pass # replace with function body
 
@@ -72,5 +71,6 @@ func _on_Vertical2_body_entered(body):
 	if body.is_in_group("Player") :
 		#print("Collision engaged", body.is_dashing)
 		if body.is_dashing and (body.direction == Movement.DOWN):
+			camera.shake(0.2,15,16)
 			go(body.direction)
 	pass # replace with function body

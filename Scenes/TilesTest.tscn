@@ -31,6 +31,7 @@ texture = ExtResource( 2 )
 
 [node name="Wall" type="Sprite" parent="." index="2"]
 
+editor/display_folded = true
 modulate = Color( 0.671875, 0.536795, 0.530151, 1 )
 position = Vector2( 64, 0 )
 texture = ExtResource( 3 )
