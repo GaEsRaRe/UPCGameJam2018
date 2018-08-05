@@ -12,7 +12,7 @@
 [ext_resource path="res://Assets/Canvas.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/Music.tscn" type="PackedScene" id=11]
 
-[node name="0-0" type="Node2D" index="0"]
+[node name="0-0" type="Node2D"]
 
 position = Vector2( 832, -128 )
 

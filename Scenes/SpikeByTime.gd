@@ -10,8 +10,8 @@ onready var faseTimer = get_node("faseTimer")
 onready var sprite = get_node("Sprite")
 
 var isEnabled = true
-var disabledTexture = preload("res://Sprites/SimpleSprite.png")
-var enabledTexture = preload("res://spikes.png")
+var disabledTexture = preload("res://Sprites/Spikes-05.png")
+var enabledTexture = preload("res://Sprites/Spikes-06.png")
 
 func _ready():
 	timer.wait_time = timeEnabled
