@@ -17,8 +17,5 @@ func _ready():
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Player"):
-		if body.is_dashing:
-			pass
-		else:
 			get_tree().reload_current_scene()
 	pass # replace with function body
