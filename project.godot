@@ -11,7 +11,8 @@ config_version=3
 [application]
 
 config/name="MindWalker"
-run/main_scene="res://Scenes/test.tscn"
+run/main_scene="res://Scenes/MainMenu.tscn"
+boot_splash/image="res://Sprites/backgroundMenu.png"
 config/icon="res://icon.png"
 
 [autoload]

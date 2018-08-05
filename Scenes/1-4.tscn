@@ -7,8 +7,9 @@
 [ext_resource path="res://Assets/Breakable.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Spike.tscn" type="PackedScene" id=6]
 
-[node name="0-0" type="Node2D" index="0"]
+[node name="0-0" type="Node2D"]
 
+position = Vector2( 0, -256 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Reset-ear" parent="." index="0" instance=ExtResource( 1 )]
@@ -74,6 +75,7 @@ _sections_unfolded = [ "Transform", "Z Index", "collision" ]
 
 position = Vector2( 256, -256 )
 map_code_level = 1
+map_code_sub_level = 5
 
 [node name="Breakable" parent="." index="5" instance=ExtResource( 5 )]
 
