@@ -26,7 +26,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="0-0" type="Node2D" index="0"]
+[node name="0-0" type="Node2D"]
 
 [node name="Reset-ear" parent="." index="0" instance=ExtResource( 1 )]
 

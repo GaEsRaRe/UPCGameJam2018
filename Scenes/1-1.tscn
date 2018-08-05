@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Reset-ear.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Tilemaps/tiles1.tres" type="TileSet" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/Spike.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/BlackZone.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Screen.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Animation" id=1]
 
@@ -27,7 +28,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="0-0" type="Node2D" index="0"]
+[node name="0-0" type="Node2D"]
 
 [node name="Reset-ear" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -171,6 +172,13 @@ anims/fadeInBlackZone = SubResource( 1 )
 position = Vector2( -1088, -512 )
 scale = Vector2( 0.9, 0.9 )
 z_index = 1
+
+[node name="Screen" parent="." index="21" instance=ExtResource( 8 )]
+
+margin_left = -1136.08
+margin_top = -964.467
+margin_right = 760.923
+margin_bottom = 120.533
 
 
 [editable path="BlackZone"]
