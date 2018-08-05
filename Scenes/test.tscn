@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/Wall.gd" type="Script" id=1]
 [ext_resource path="res://TempWall.png" type="Texture" id=2]
@@ -12,6 +12,19 @@
 [ext_resource path="res://Assets/Teleport.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/Spike.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/Player.tscn" type="PackedScene" id=12]
+
+[sub_resource type="Shader" id=6]
+
+code = "shader_type canvas_item;
+
+void fragment(){
+	COLOR = vec4(1.0,0.0,0.0,1.0);
+	}"
+
+[sub_resource type="ShaderMaterial" id=7]
+
+render_priority = 0
+shader = SubResource( 6 )
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -28,7 +41,11 @@ extents = Vector2( 319.299, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" index="0"]
+
+material = SubResource( 7 )
+use_parent_material = true
+_sections_unfolded = [ "Material" ]
 
 [node name="Normal Walls" type="Node" parent="." index="0"]
 
@@ -175,6 +192,7 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
+_sections_unfolded = [ "Material" ]
 
 [node name="Reset-ear" parent="." index="5" instance=ExtResource( 6 )]
 
@@ -242,7 +260,9 @@ position = Vector2( 695.897, 62.2138 )
 "Player",
 ] instance=ExtResource( 12 )]
 
+use_parent_material = true
 position = Vector2( 525.738, 252.534 )
+_sections_unfolded = [ "Material", "Transform", "collision" ]
 
 [connection signal="body_entered" from="Door-switch/switch" to="Door-switch" method="_on_switch_body_entered"]
 

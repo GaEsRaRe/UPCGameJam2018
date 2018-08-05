@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/player.gd" type="Script" id=1]
-[ext_resource path="res://temp.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/Stand/player_front.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/Stand/player_right.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Stand/player_front.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Stand/player_right.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Stand/player_right_closed.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Stand/player_down.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/Stand/player_left.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Stand/player_down_closed.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Stand/player_left.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Stand/player_left_closed.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -15,48 +17,42 @@ extents = Vector2( 33.1823, 31.64 )
 [sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "UP",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "RIGHT",
-"speed": 5.0
+"speed": 2.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "DOWN",
-"speed": 5.0
+"speed": 2.0
 }, {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "LEFT",
-"speed": 5.0
+"speed": 2.0
 } ]
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" index="0"]
 
+z_index = 2
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform", "collision" ]
+_sections_unfolded = [ "Transform", "Z Index", "collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
 position = Vector2( 35, 35 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
-
-[node name="Sprite" type="Sprite" parent="CollisionShape2D" index="0"]
-
-visible = false
-scale = Vector2( 0.175993, 0.175993 )
-texture = ExtResource( 2 )
-_sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="Timer" type="Timer" parent="." index="1"]
 
@@ -69,6 +65,7 @@ autostart = false
 
 frames = SubResource( 2 )
 animation = "DOWN"
+frame = 3
 centered = false
 offset = Vector2( 0, -64 )
 _sections_unfolded = [ "Transform" ]
