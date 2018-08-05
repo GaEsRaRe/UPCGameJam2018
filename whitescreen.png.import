@@ -2,11 +2,13 @@
 
 importer="texture"
 type="StreamTexture"
-valid=false
+path="res://.import/whitescreen.png-bcabdc32795df2a2fccdc8c3c0d49133.stex"
 
 [deps]
 
-source_file="res://wall1.png"
+source_file="res://whitescreen.png"
+dest_files=[ "res://.import/whitescreen.png-bcabdc32795df2a2fccdc8c3c0d49133.stex" ]
+
 [params]
 
 compress/mode=0

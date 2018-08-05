@@ -2,11 +2,13 @@
 
 importer="texture"
 type="StreamTexture"
-valid=false
+path="res://.import/box.png-196cb2b6d7422a4ab3b9c60b5a994fe3.stex"
 
 [deps]
 
-source_file="res://wall1.png"
+source_file="res://box.png"
+dest_files=[ "res://.import/box.png-196cb2b6d7422a4ab3b9c60b5a994fe3.stex" ]
+
 [params]
 
 compress/mode=0

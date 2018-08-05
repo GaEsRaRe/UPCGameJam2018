@@ -1,17 +1,13 @@
 extends Area2D
 
-export var map_code_level = 0
-export var map_code_sub_level = 0
+export var map_code_level = 1
+export var map_code_sub_level = 1
 var address
 
 func _ready():
 	address = str("res://Scenes/",map_code_level,"-",map_code_sub_level,".tscn")
 	pass
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
 
 
 

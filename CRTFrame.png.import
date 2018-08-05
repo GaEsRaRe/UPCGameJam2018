@@ -2,11 +2,13 @@
 
 importer="texture"
 type="StreamTexture"
-valid=false
+path="res://.import/CRTFrame.png-96837578d803d46c371247267c1fa407.stex"
 
 [deps]
 
-source_file="res://wall1.png"
+source_file="res://CRTFrame.png"
+dest_files=[ "res://.import/CRTFrame.png-96837578d803d46c371247267c1fa407.stex" ]
+
 [params]
 
 compress/mode=0

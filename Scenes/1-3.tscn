@@ -69,7 +69,6 @@ _sections_unfolded = [ "Limit", "Transform" ]
 
 position = Vector2( -1664, 0 )
 scale = Vector2( 0.9, 0.9 )
-_sections_unfolded = [ "Transform", "Z Index", "collision" ]
 
 [node name="Teleport" parent="." index="4" instance=ExtResource( 4 )]
 
