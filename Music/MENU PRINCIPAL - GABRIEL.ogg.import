@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/MENU PRINCIPAL - GABRIEL.ogg-f2f5d2e2a26c31701dd164043b7002b1.oggstr"
+
+[deps]
+
+source_file="res://Music/MENU PRINCIPAL - GABRIEL.ogg"
+dest_files=[ "res://.import/MENU PRINCIPAL - GABRIEL.ogg-f2f5d2e2a26c31701dd164043b7002b1.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

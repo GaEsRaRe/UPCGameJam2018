@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/TEMA PRINCIPAL - GABRIEL.ogg-995740684080df56468e4faf7e4d512f.oggstr"
+
+[deps]
+
+source_file="res://Music/TEMA PRINCIPAL - GABRIEL.ogg"
+dest_files=[ "res://.import/TEMA PRINCIPAL - GABRIEL.ogg-995740684080df56468e4faf7e4d512f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
