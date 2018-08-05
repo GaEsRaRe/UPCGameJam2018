@@ -2,6 +2,7 @@ extends StaticBody2D
 
 enum Movement{NONE,UP,RIGHT,DOWN,LEFT}
 onready var colly = get_node("Body")
+onready var camera = get_parent().get_node("Camera2D")
 
 func _ready():
 	set_physics_process(true)
@@ -17,6 +18,7 @@ func _on_Area2D_body_entered(body):
 			if body.direction == Movement.LEFT or body.direction == Movement.RIGHT:
 				colly.disabled = true
 				body.is_dashing = false
+				camera.shake(0.2,12,8)
 				queue_free()
 	pass # replace with function body
 
@@ -27,5 +29,6 @@ func _on_Vertical_body_entered(body):
 			if body.direction == Movement.UP or body.direction == Movement.DOWN:
 				colly.disabled = true
 				body.is_dashing = false
+				camera.shake(0.2,12,8)
 				queue_free()
 	pass # replace with function body

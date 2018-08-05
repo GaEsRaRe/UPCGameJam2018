@@ -72,24 +72,30 @@ func _movement(delta):
 			move_and_slide(globals.UP * speed, Vector2(0,-1))
 			if is_on_ceiling():
 				character_sprite.play("RIGHT")
+				if is_dashing:
+					camera.shake(0.2,15,16)
 				_kill_movement()
 		Movement.RIGHT:
 			move_and_slide(globals.RIGHT * speed, Vector2(0,-1))
 			if is_on_wall():
 				character_sprite.play("RIGHT")
+				if is_dashing:
+					camera.shake(0.2,15,16)
 				_kill_movement()
 		Movement.DOWN:
 			move_and_slide(globals.DOWN * speed, Vector2(0,-1))
 			if is_on_floor():
 				character_sprite.play("DOWN")
 				if is_dashing:
-					pass
+					camera.shake(0.2,15,16)
 				_kill_movement()
 		Movement.LEFT:
 			move_and_slide(globals.LEFT * speed, Vector2(0,-1))
 			
 			if is_on_wall():
 				character_sprite.play("LEFT")
+				if is_dashing:
+					camera.shake(0.2,15,16)
 				_kill_movement()
 	
 	pass

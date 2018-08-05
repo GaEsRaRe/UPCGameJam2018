@@ -33,7 +33,7 @@ shader = SubResource( 1 )
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" index="0"]
 
 material = SubResource( 2 )
 use_parent_material = true
@@ -179,6 +179,20 @@ margin_bottom = 838.0
 [node name="Box" parent="Boxes" index="0" instance=ExtResource( 14 )]
 
 position = Vector2( 518.809, -29.2212 )
+
+[node name="SpikeByTime" type="Area2D" parent="." index="11"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeByTime" index="0"]
+
+[node name="Sprite" type="Sprite" parent="SpikeByTime" index="1"]
 
 [connection signal="body_entered" from="Door-switch/switch" to="Door-switch" method="_on_switch_body_entered"]
 
