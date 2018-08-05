@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Reset-ear.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Teleport.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Tilemaps/tiles1.tres" type="TileSet" id=3]
 [ext_resource path="res://Assets/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Breakable.tscn" type="PackedScene" id=5]
+[ext_resource path="res://spikes.png" type="Texture" id=6]
 
-[node name="0-0" type="Node2D"]
+[node name="0-0" type="Node2D" index="0"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -72,7 +73,6 @@ _sections_unfolded = [ "Limit", "Transform" ]
 
 position = Vector2( -64, -384 )
 scale = Vector2( 0.9, 0.9 )
-_sections_unfolded = [ "Transform", "Z Index", "collision" ]
 
 [node name="Breakable" parent="." index="5" instance=ExtResource( 5 )]
 
@@ -98,5 +98,33 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 [node name="Breakable6" parent="." index="10" instance=ExtResource( 5 )]
 
 position = Vector2( -640, -64 )
+
+[node name="spikes" type="Sprite" parent="." index="11"]
+
+position = Vector2( -768, -320 )
+texture = ExtResource( 6 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="spikes2" type="Sprite" parent="." index="12"]
+
+position = Vector2( -320, -192 )
+texture = ExtResource( 6 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="spikes3" type="Sprite" parent="." index="13"]
+
+position = Vector2( -64, -64 )
+texture = ExtResource( 6 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="spikes4" type="Sprite" parent="." index="14"]
+
+position = Vector2( -832, -64 )
+texture = ExtResource( 6 )
+centered = false
+_sections_unfolded = [ "Offset" ]
 
 

@@ -27,7 +27,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="0-0" type="Node2D" index="0"]
+[node name="0-0" type="Node2D"]
 
 [node name="Reset-ear" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -144,7 +144,6 @@ position = Vector2( 0, -448 )
 
 [node name="BlackZone" parent="." index="18" instance=ExtResource( 6 )]
 
-editor/display_folded = true
 position = Vector2( 384, -320 )
 
 [node name="BlackZoneSprite" parent="BlackZone" index="0"]
@@ -154,13 +153,12 @@ scale = Vector2( 12, 10 )
 
 [node name="BlackZone2" parent="." index="19" instance=ExtResource( 6 )]
 
-editor/display_folded = true
 position = Vector2( 384, -128 )
 
 [node name="BlackZoneSprite" parent="BlackZone2" index="0"]
 
-position = Vector2( -832, -256 )
-scale = Vector2( 6, 8 )
+position = Vector2( -832, -192 )
+scale = Vector2( 6, 7 )
 
 [node name="AnimationPlayer" parent="BlackZone2" index="2"]
 
@@ -173,7 +171,6 @@ anims/fadeInBlackZone = SubResource( 1 )
 position = Vector2( -1088, -512 )
 scale = Vector2( 0.9, 0.9 )
 z_index = 1
-_sections_unfolded = [ "Transform", "Z Index", "collision" ]
 
 
 [editable path="BlackZone"]
