@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Reset-ear.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Tilemaps/tiles1.tres" type="TileSet" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/Teleport.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/BlackZone.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Screen.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Music.tscn" type="PackedScene" id=8]
 
 [node name="0-0" type="Node2D"]
 
@@ -101,6 +102,8 @@ margin_left = -1394.0
 margin_top = -932.0
 margin_right = 503.0
 margin_bottom = 153.0
+
+[node name="AudioStreamPlayer2D" parent="." index="9" instance=ExtResource( 8 )]
 
 
 [editable path="BlackZone"]
