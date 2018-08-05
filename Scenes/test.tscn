@@ -28,7 +28,7 @@ extents = Vector2( 319.299, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="Node2D" type="Node2D" index="0"]
+[node name="Node2D" type="Node2D"]
 
 [node name="Normal Walls" type="Node" parent="." index="0"]
 
@@ -180,6 +180,7 @@ editor_draw_drag_margin = false
 
 [node name="Door-switch" type="Node2D" parent="." index="6"]
 
+editor/display_folded = true
 position = Vector2( 499.258, 145.56 )
 script = ExtResource( 7 )
 
