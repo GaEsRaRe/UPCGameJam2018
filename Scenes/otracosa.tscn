@@ -6,7 +6,8 @@
 [ext_resource path="res://Assets/Teleport.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/BlackZone.tscn" type="PackedScene" id=5]
 [ext_resource path="res://key.png" type="Texture" id=6]
-[ext_resource path="res://Assets/DoorWithKey.tscn" type="PackedScene" id=7]
+[ext_resource path="res://DoorWithKey.tscn" type="PackedScene" id=7]
+
 
 [sub_resource type="GDScript" id=1]
 
