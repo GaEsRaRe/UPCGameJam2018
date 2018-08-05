@@ -17,6 +17,7 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( -960, -384 )
 map_code_level = 1
+map_code_sub_level = 1
 
 [node name="Map" type="TileMap" parent="." index="2"]
 

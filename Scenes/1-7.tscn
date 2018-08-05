@@ -70,7 +70,6 @@ _sections_unfolded = [ "Limit", "Transform" ]
 
 position = Vector2( 320, -576 )
 scale = Vector2( 0.9, 0.9 )
-_sections_unfolded = [ "Transform", "Z Index", "collision" ]
 
 [node name="Spike13" parent="." index="4" instance=ExtResource( 4 )]
 
