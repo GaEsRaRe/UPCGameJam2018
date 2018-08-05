@@ -6,6 +6,7 @@ onready var timer = get_node("Timer")
 var is_dashing = false
 onready var character_sprite = get_node("AnimatedSprite")
 onready var tween = get_node("Tween")
+onready var camera = get_parent().get_node("Camera2D")
 var on_tween = false
 var old_direction 
 var direction = Movement.NONE
@@ -81,6 +82,8 @@ func _movement(delta):
 			move_and_slide(globals.DOWN * speed, Vector2(0,-1))
 			if is_on_floor():
 				character_sprite.play("DOWN")
+				if is_dashing:
+					pass
 				_kill_movement()
 		Movement.LEFT:
 			move_and_slide(globals.LEFT * speed, Vector2(0,-1))
