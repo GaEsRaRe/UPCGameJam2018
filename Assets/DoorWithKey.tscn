@@ -3,15 +3,15 @@
 [ext_resource path="res://Scripts/DoorWithKey.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/SimpleSprite.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 39, 10 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 32, 32 )
 
 [node name="DoorWithKey" type="StaticBody2D"]
 
@@ -42,7 +42,7 @@ keyName = "key1"
 
 position = Vector2( 32, 32 )
 scale = Vector2( 2.46154, 2.46154 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
@@ -55,8 +55,7 @@ _sections_unfolded = [ "Offset", "Visibility" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
 position = Vector2( 32, 32 )
-scale = Vector2( 2.46154, 2.46154 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [connection signal="body_entered" from="DoorArea" to="DoorArea" method="_on_Door_body_entered"]
