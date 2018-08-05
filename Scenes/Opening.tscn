@@ -16,7 +16,7 @@ func _ready():
 
 func _process(delta):
 	if go:
-		get_tree().change_scene(\"res://Scenes/0-0.tscn\")
+		get_tree().change_scene(\"res://Scenes/1-1.tscn\")
 	
 	pass"
 

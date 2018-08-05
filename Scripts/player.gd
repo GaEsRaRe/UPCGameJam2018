@@ -78,11 +78,13 @@ func _movement(delta):
 		Movement.DOWN:
 			move_and_slide(globals.DOWN * speed, Vector2(0,-1))
 			if is_on_floor():
+				character_sprite.play("DOWN")
 				_kill_movement()
 		Movement.LEFT:
 			move_and_slide(globals.LEFT * speed, Vector2(0,-1))
 			
 			if is_on_wall():
+				character_sprite.play("LEFT")
 				_kill_movement()
 	
 	pass
@@ -99,11 +101,11 @@ func _selector():
 	elif Input.is_action_just_pressed("ui_down"):
 		direction = Movement.DOWN
 		speed = globals.player_speed
-		character_sprite.play("DOWN")
+		character_sprite.play("RUN_DOWN")
 	elif Input.is_action_just_pressed("ui_left"):
 		direction = Movement.LEFT
 		speed = globals.player_speed
-		character_sprite.play("LEFT")
+		character_sprite.play("RUN_LEFT")
 	pass
 
 func go_dash():

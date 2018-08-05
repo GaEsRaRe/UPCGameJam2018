@@ -137,7 +137,6 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="AreaCollisionShape2D" parent="DoorWithKey/DoorArea" index="0"]
 
-position = Vector2( 32, 32 )
 scale = Vector2( 2.28572, 2.46154 )
 
 [connection signal="body_entered" from="Key" to="Key" method="_on_Key_body_entered"]
