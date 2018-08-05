@@ -26,10 +26,10 @@ func _ready():
 
 func _on_Button_button_down():
 	get_tree().change_scene(\"res://Scenes/Opening.tscn\")
-	pass # replace with function body
+	pass 
 "
 
-[node name="MainMenu" type="Node"]
+[node name="MainMenu" type="Node" index="0"]
 
 script = SubResource( 1 )
 
