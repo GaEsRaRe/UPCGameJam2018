@@ -91,7 +91,7 @@ shader_param/scan_size = null
 shader_param/scanline_alpha = null
 shader_param/lines_velocity = null
 
-[node name="Screen" type="TextureRect" index="0"]
+[node name="Screen" type="TextureRect"]
 
 material = SubResource( 2 )
 anchor_left = 0.0
