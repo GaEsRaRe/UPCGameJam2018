@@ -25,16 +25,19 @@ func _ready():
 
 
 func _on_Button_button_down():
+	Music.change_music()
 	get_tree().change_scene(\"res://Scenes/Opening.tscn\")
 	pass 
 
 
 func _on_Button2_button_down():
+	
 	get_tree().change_scene(\"res://Scenes/Creditos.tscn\")
+	
 	pass # replace with function body
 "
 
-[node name="MainMenu" type="Node"]
+[node name="MainMenu" type="Node" index="0"]
 
 script = SubResource( 1 )
 
@@ -93,8 +96,8 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 848.0
 margin_top = 117.0
-margin_right = 1373.0
-margin_bottom = 241.0
+margin_right = 2128.0
+margin_bottom = 417.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -172,14 +175,16 @@ _sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="1"]
 
+position = Vector2( 930.859, 586.645 )
 stream = ExtResource( 4 )
-volume_db = 24.0
+volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
 max_distance = 2000.0
 attenuation = 1.0
 bus = "Master"
 area_mask = 1
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="button_down" from="Control/Button2" to="." method="_on_Button2_button_down"]
 

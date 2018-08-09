@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Reset-ear.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Breakable.tscn" type="PackedScene" id=2]
@@ -10,9 +10,8 @@
 [ext_resource path="res://Assets/BlackZone.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Screen.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Canvas.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Assets/Music.tscn" type="PackedScene" id=11]
 
-[node name="0-0" type="Node2D" index="0"]
+[node name="0-0" type="Node2D"]
 
 position = Vector2( -128, 0 )
 
@@ -177,8 +176,6 @@ margin_left = -1664.0
 margin_top = -64.0
 margin_right = -1564.0
 margin_bottom = 244.0
-
-[node name="AudioStreamPlayer2D" parent="." index="25" instance=ExtResource( 11 )]
 
 
 [editable path="BlackZone"]

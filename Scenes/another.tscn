@@ -16,8 +16,6 @@
 [ext_resource path="res://Assets/Box.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/SpikeByTime.tscn" type="PackedScene" id=15]
 
-
-
 [sub_resource type="Shader" id=1]
 
 code = "shader_type canvas_item;
@@ -36,7 +34,7 @@ shader = SubResource( 1 )
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="Node2D" type="Node2D" index="0"]
+[node name="Node2D" type="Node2D"]
 
 material = SubResource( 2 )
 use_parent_material = true

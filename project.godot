@@ -19,13 +19,12 @@ config/icon="res://logo.png"
 [autoload]
 
 globals="*res://Scripts/globals.gd"
+Music="*res://Assets/Music.tscn"
 
 [display]
 
 window/size/width=1920
 window/size/height=1080
-window/size/fullscreen=true
-window/size/always_on_top=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 

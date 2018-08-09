@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/Reset-ear.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Tilemaps/tiles1.tres" type="TileSet" id=2]
@@ -11,7 +11,6 @@
 [ext_resource path="res://Assets/BlackZone.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Canvas.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/Screen.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Assets/Music.tscn" type="PackedScene" id=12]
 
 [node name="0-0" type="Node2D"]
 
@@ -150,8 +149,6 @@ margin_bottom = 165.0
 margin_left = -20.0
 margin_top = -20.0
 margin_right = 1920.0
-
-[node name="AudioStreamPlayer2D" parent="." index="12" instance=ExtResource( 12 )]
 
 
 [editable path="DoorWithKey"]
